@@ -22,6 +22,13 @@
                     {% csrf_token %}
                     <h2 class="fonte-destaque1">Cadastre-se</h2>
                     <br>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <section class="alert {{message.tags}}">
+                                {{message}}
+                            </section>
+                        {% endfor %}
+                    {% endif %}
                     <label for=""><strong>Usuário</strong></label>
                     <input type="text" name="username" id="" class="form-control" placeholder="Nome de Usuário">
                     <br>
@@ -40,7 +47,7 @@
                     </div>
                     <br>
                     <input type="submit" value="Cadastrar" class="btn btn-success btn-dark-color">
-                    <a href="#" class="btn btn-dark-color-outline">Já possuo uma conta</a>
+                    <a href="{% url 'login' %}" class="btn btn-dark-color-outline">Já possuo uma conta</a>
                 </form>
             </div>
         </div>
