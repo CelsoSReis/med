@@ -130,7 +130,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# menssagens de alerta
+# Alertas
 from django.contrib.messages import constants
 MESSAGE_TAGS = {
  constants.DEBUG: 'alert-primary',
