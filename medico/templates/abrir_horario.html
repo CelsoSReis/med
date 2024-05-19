@@ -24,7 +24,7 @@
 <br>
 <p style="font-size: 25px" class="p-bold">Abrir horários para consultas</p>
 <hr>
-<form action="#" method="POST">
+<form action="{% url 'abrir_horario' %}" method="POST">{% csrf_token %}
 <label for="">Escolher data:</label>
 <input type="datetime-local" name="data" class="form-control shadow-main-color">
 <br>
@@ -33,9 +33,13 @@
 </div>
 <div class="col-md-4">
 <p style="font-size: 25px" class="p-bold">Seus horários:</p>
+
 <ul class="list-group">
-<li>X</li>
+    {% for data in datas_abertas %}
+    <li>{{data}}</li>
+    {% endfor %}
 </ul>
+
 </div>
 </div>
 </div>
